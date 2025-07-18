@@ -5,16 +5,14 @@ import ma.enset.digitalbankingbackend.dtos.AccountOperationDTO;
 import ma.enset.digitalbankingbackend.dtos.BankAccountDTO;
 import ma.enset.digitalbankingbackend.exceptions.BankAccountNotFoundException;
 import ma.enset.digitalbankingbackend.services.BankAccountService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@CrossOrigin("*")
 public class BankAccountRestController {
-    private BankAccountService bankAccountService;
+    private final BankAccountService bankAccountService;
     public BankAccountRestController(BankAccountService bankAccountService) {
         this.bankAccountService = bankAccountService;
     }
